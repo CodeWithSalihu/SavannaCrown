@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>SavannaCrown booking</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+
+        <!-- Favicons -->
+        <link href="img/favicon.ico" rel="icon">
+        <link href="img/apple-favicon.png" rel="apple-touch-icon">
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet"> 
+
+        <!-- Vendor CSS File -->
+        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+        <link href="vendor/slick/slick.css" rel="stylesheet">
+        <link href="vendor/slick/slick-theme.css" rel="stylesheet">
+        <link href="vendor/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+        <!-- Main Stylesheet File -->
+        <link href="css/hover-style.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+
+        <!-- Paystack Inline JS (V2) -->
+        <script src="https://js.paystack.co/v2/inline.js"></script>
+    </head>
+
+    <body>
+        <!-- Header Section Start -->
+        <header id="header">
+            <a href="index.html" class="logo"><img src="img/logo.jpg" alt="logo"></a>
+            <div class="phone"><i class="fa fa-phone"></i>+234 803 456 7890</div>
+            <div class="mobile-menu-btn"><i class="fa fa-bars"></i></div>
+            <nav class="main-menu top-menu">
+                <ul>
+                    <li class="active"><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="room.html">Rooms</a></li>
+                    <li><a href="amenities.html">Amenities</a></li>
+                    <li><a href="booking.html">Booking</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!-- Header Section End -->
+
+        <!-- Search Section Start -->
+        <div id="search" style="background: #f2f2f2;">
+            <div class="container">
+                <div class="form-row">
+                    <div class="control-group col-md-3">
+                        <label>Check-In</label>
+                        <div class="form-group">
+                            <div class="input-group date" id="date-3" data-target-input="nearest">
+                                <input type="text" class="form-control datetimepicker-input" data-target="#date-3"/>
+                                <div class="input-group-append" data-target="#date-3" data-toggle="datetimepicker">
+                                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="control-group col-md-3">
+                        <label>Check-Out</label>
+                        <div class="form-group">
+                            <div class="input-group date" id="date-4" data-target-input="nearest">
+                                <input type="text" class="form-control datetimepicker-input" data-target="#date-4"/>
+                                <div class="input-group-append" data-target="#date-4" data-toggle="datetimepicker">
+                                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="control-group col-md-3">
+                        <div class="form-row">
+                            <div class="control-group col-md-6">
+                                <label>Adult</label>
+                                <select class="custom-select">
+                                    <option selected>0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                </select>
+                            </div>
+                            <div class="control-group col-md-6 kid">
+                                <label>Kid</label>
+                                <select class="custom-select">
+                                    <option selected>0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="control-group col-md-3">
+                        <button class="btn btn-block">Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Search Section End -->
+           
+      <!-- Booking Section Start -->
+<div id="booking">
+    <div class="container">
+        <div class="section-header">
+            <h2>Room Booking</h2>
+            <p>
+                Reserve your stay at SavannaCrown Hotel, Calabar with ease. Fill in your details below and let us prepare a comfortable and memorable experience for you.
+            </p>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="booking-form">
+                    <div id="success"></div>
+                    <form name="sentMessage" id="bookingForm" novalidate="novalidate">
+
+                        <!-- Guest Info -->
+                        <div class="form-row">
+                            <div class="control-group col-sm-6">
+                                <label>First Name</label>
+                                <input type="text" class="form-control" id="fname" placeholder="E.g. Ahmed" required data-validation-required-message="Please enter first name" />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="control-group col-sm-6">
+                                <label>Last Name</label>
+                                <input type="text" class="form-control" id="lname" placeholder="E.g. Okon" required data-validation-required-message="Please enter last name" />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="control-group col-sm-6">
+                                <label>Mobile</label>
+                                <input type="text" class="form-control" id="mobile" placeholder="E.g. +234 803 456 7890" required data-validation-required-message="Please enter your mobile number" />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="control-group col-sm-6">
+                                <label>Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="E.g. guest@savannacrown.com" required data-validation-required-message="Please enter your email" />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+
+                        <!-- Stay Dates -->
+                        <div class="form-row">
+                            <div class="control-group col-sm-6">
+                                <label>Check-In</label>
+                                <input type="text" class="form-control datetimepicker-input" id="date-1" data-toggle="datetimepicker" data-target="#date-1" placeholder="E.g. DD/MM/YYYY" required data-validation-required-message="Please enter date"/>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="control-group col-sm-6">
+                                <label>Check-Out</label>
+                                <input type="text" class="form-control datetimepicker-input" id="date-2" data-toggle="datetimepicker" data-target="#date-2" placeholder="E.g. DD/MM/YYYY" required data-validation-required-message="Please enter date"/>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+
+                        <!-- Room Selection -->
+                        <div class="control-group">
+                            <label>Select Room Category</label>
+                            <select class="form-control" id="roomCategory" required data-validation-required-message="Please select a room category">
+                                <option value="" disabled selected>-- Choose a Room --</option>
+                                <option value="standard-single" data-price="250000">Standard Single - ₦250,000 / night</option>
+                                <option value="standard-double" data-price="320000">Standard Double - ₦320,000 / night</option>
+                                <option value="premium-single" data-price="350000">Premium Single - ₦350,000 / night</option>
+                                <option value="silver-double" data-price="280000">Silver Double - ₦280,000 / night</option>
+                                <option value="premium-double" data-price="600000">Premium Double - ₦600,000 / night</option>
+                            </select>
+                            <p class="help-block text-danger"></p>
+                        </div>
+
+                        <!-- Display Price & Nights -->
+                        <div class="control-group">
+                            <p><strong>Price per Night:</strong> <span id="roomPrice">₦0</span></p>
+                            <p><strong>Total Nights:</strong> <span id="totalNights">0</span></p>
+                            <p><strong>Total Amount:</strong> <span id="totalAmount">₦0</span></p>
+                        </div>
+
+                        <!-- Special Request -->
+                        <div class="control-group">
+                            <label>Special Request</label>
+                            <input type="text" class="form-control" id="request" placeholder="E.g. Airport pickup, late check-in, extra pillows" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+
+                        <!-- Hotel Policy -->
+                        <div class="control-group">
+                            <label>Hotel Policy</label>
+                            <ul class="hotel-policy">
+                                <li>Check-in: 2:00 PM | Check-out: 12:00 PM</li>
+                                <li>Children under 12 stay free with existing bedding.</li>
+                                <li>Pets are not allowed.</li>
+                                <li>Full payment required at check-in.</li>
+                                <li>Cancellations must be made 24 hours prior to arrival to avoid charges.</li>
+                            </ul>
+                        </div>
+
+                        <div class="button">
+                            <button type="button" id="bookingButton">Book Now</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Booking Section End -->
+
+        
+       <!-- Footer Section Start -->
+<div id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="social">
+                    <a href="https://www.instagram.com/savannacrownhotel" target="_blank"><li class="fa fa-instagram"></li></a>
+                    <a href="https://twitter.com/savannacrownhotel" target="_blank"><li class="fa fa-twitter"></li></a>
+                    <a href="https://www.facebook.com/savannacrownhotel" target="_blank"><li class="fa fa-facebook-f"></li></a>
+                </div>
+            </div>
+            <div class="col-12">
+                <p>Copyright &#169; 2026 <a href="index.html">SavannaCrown Hotel</a>. All Rights Reserved.</p>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer Section End -->
+        
+        <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+        <!-- Vendor JavaScript File -->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/jquery/jquery-migrate.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="vendor/easing/easing.min.js"></script>
+        <script src="vendor/stickyjs/sticky.js"></script>
+        <script src="vendor/superfish/hoverIntent.js"></script>
+        <script src="vendor/superfish/superfish.min.js"></script>
+        <script src="vendor/wow/wow.min.js"></script>
+        <script src="vendor/slick/slick.min.js"></script>
+        <script src="vendor/tempusdominus/js/moment.min.js"></script>
+        <script src="vendor/tempusdominus/js/moment-timezone.min.js"></script>
+        <script src="vendor/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+        
+        <!-- Booking Javascript File -->
+        <script src="js/booking.js"></script>
+        <script src="js/jqBootstrapValidation.min.js"></script>
+  
+        <!-- Main Javascript File -->
+        <script src="js/main.js"></script>
+
+        <!-- Custom Paystack Integration Script -->
+        <script>
+            $(document).ready(function() {
+                // Trigger calculation on changes (room, dates)
+                function calculateTotal() {
+                    var checkIn = $('#date-1').datetimepicker('viewDate');
+                    var checkOut = $('#date-2').datetimepicker('viewDate');
+                    var roomSelect = $('#roomCategory');
+                    var pricePerNight = parseFloat(roomSelect.find(':selected').data('price')) || 0;
+
+                    $('#roomPrice').text('₦' + pricePerNight.toLocaleString());
+
+                    if (checkIn && checkOut && checkOut > checkIn) {
+                        var nights = Math.ceil((checkOut - checkIn) / (1000 * 60 * 60 * 24));
+                        $('#totalNights').text(nights);
+                        var total = nights * pricePerNight;
+                        $('#totalAmount').text('₦' + total.toLocaleString());
+                        return total;
+                    } else {
+                        $('#totalNights').text('0');
+                        $('#totalAmount').text('₦0');
+                        return 0;
+                    }
+                }
+
+                $('#roomCategory, #date-1, #date-2').on('change', calculateTotal);
+
+                // Initial calculation in case fields are pre-filled
+                calculateTotal();
+
+                // Paystack payment handler
+                $('#bookingButton').on('click', function(e) {
+                    e.preventDefault();
+
+                    // Basic validation (jqBootstrapValidation or manual)
+                    var isValid = true;
+                    $('#bookingForm [required]').each(function() {
+                        if ($(this).val() === '') {
+                            isValid = false;
+                        }
+                    });
+                    if ($('#roomCategory').val() === '') isValid = false;
+
+                    if (!isValid) {
+                        alert('Please fill all required fields correctly.');
+                        return;
+                    }
+
+                    var totalAmountNGN = calculateTotal();
+                    if (totalAmountNGN <= 0) {
+                        alert('Please select valid dates and room to calculate amount.');
+                        return;
+                    }
+
+                    var amountInKobo = Math.round(totalAmountNGN * 100);
+
+                    var email = $('#email').val();
+                    var firstName = $('#fname').val();
+                    var lastName = $('#lname').val();
+
+                    var handler = PaystackPop.setup({
+                        key: 'pk_test_309eb82492ee9fef7b15db62614599b7930e7fb2',
+                        email: email,
+                        amount: amountInKobo,
+                        currency: 'NGN',
+                        ref: 'SC_' + Math.floor((Math.random() * 1000000000) + 1),
+                        metadata: {
+                            custom_fields: [
+                                {
+                                    display_name: "Full Name",
+                                    variable_name: "full_name",
+                                    value: firstName + ' ' + lastName
+                                },
+                                {
+                                    display_name: "Mobile",
+                                    variable_name: "mobile",
+                                    value: $('#mobile').val()
+                                },
+                                {
+                                    display_name: "Room Category",
+                                    variable_name: "room_category",
+                                    value: $('#roomCategory').find(':selected').text()
+                                },
+                                {
+                                    display_name: "Check-In",
+                                    variable_name: "check_in",
+                                    value: $('#date-1').val()
+                                },
+                                {
+                                    display_name: "Check-Out",
+                                    variable_name: "check_out",
+                                    value: $('#date-2').val()
+                                },
+                                {
+                                    display_name: "Total Amount",
+                                    variable_name: "total_amount",
+                                    value: '₦' + totalAmountNGN.toLocaleString()
+                                }
+                            ]
+                        },
+                        onClose: function() {
+                            alert('Payment window closed. Booking not completed.');
+                        },
+                        callback: function(response) {
+                            alert('Payment successful! Reference: ' + response.reference);
+                            $('#success').html('<div class="alert alert-success"><strong>Success!</strong> Booking confirmed. We will send confirmation to your email shortly.</div>');
+                            // TODO: Send to backend for verification using secret key
+                        }
+                    });
+                    handler.openIframe();
+                });
+            });
+        </script>
+    </body>
+</html>
